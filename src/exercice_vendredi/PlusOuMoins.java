@@ -5,8 +5,6 @@
  */
 package exercice_vendredi;
 
-import java.awt.Event;
-import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -20,7 +18,6 @@ public class PlusOuMoins {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Date aujourdhui = new Date();
         long begin = System.currentTimeMillis();
         long end;
         
