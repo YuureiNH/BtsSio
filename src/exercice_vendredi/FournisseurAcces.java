@@ -5,6 +5,12 @@
  */
 package exercice_vendredi;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 /**
  *
  * @author Nicolas
@@ -13,7 +19,7 @@ public class FournisseurAcces {
     
     
     
-    private static void DetectionFournisseur(String tab[]) {
+    public static void DetectionFournisseur(String tab[]) {
         String[] fournisseur = new String[tab.length];
         
         for (int i = 0; i < tab.length; i++ ) {
@@ -24,23 +30,32 @@ public class FournisseurAcces {
     }
     
     public static void CompteurFournisseur(String tableau[]) {
-        String nom = null;
-        int compteur = 0;
-        int pointeur = 0;
-        for (int i = 0; i < tableau.length; i++ ){
-            System.out.print(tableau [i] + " a une part de marché de "); 
-            compteur = 0;
-            
-            for(int j = 0; j < tableau.length; j++){
-                if(tableau[i].equalsIgnoreCase(tableau [j]))
-                    compteur++;
-            }
-            pointeur = i;
-            if(tableau[i].equalsIgnoreCase(tableau[++pointeur]))
-                i = ++i;
-            
-            System.out.println(compteur*10+"%");
+        int compteur;
+        int pointeur;
+
+//avec les collections
+        List asList = Arrays.asList(tableau);
+        Set<String> mySet = new HashSet<>(asList);
+        for(String s: mySet){
+            System.out.println(s + " " +Collections.frequency(asList,s)*10+'%');
         }
+        
+        
+//        Mon code originel sans collection
+//        for (int i = 0; i < tableau.length; i++ ){
+//            System.out.print(tableau [i] + " a une part de marché de "); 
+//            compteur = 0;
+//            
+//            for(int j = 0; j < tableau.length; j++){
+//                if(tableau[i].equalsIgnoreCase(tableau [j]))
+//                    compteur++;
+//            }
+//            pointeur = i;
+//            if(tableau[i].equalsIgnoreCase(tableau[++pointeur]))
+//                i = ++i;
+//            
+//            System.out.println(compteur*10+"%");
+//        }
                 
     }
     /**
