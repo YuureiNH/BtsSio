@@ -25,18 +25,22 @@ public class FournisseurAcces {
     
     public static void CompteurFournisseur(String tableau[]) {
         String nom = null;
-        int[] fournisseur = new int[tableau.length];
         int compteur = 0;
+        int pointeur = 0;
         for (int i = 0; i < tableau.length; i++ ){
-            System.out.print("Nombre d'occurence de " + tableau [i] + " = "); 
+            System.out.print(tableau [i] + " a une part de marché de "); 
             compteur = 0;
+            
             for(int j = 0; j < tableau.length; j++){
                 if(tableau[i].equalsIgnoreCase(tableau [j]))
                     compteur++;
             }
+            pointeur = i;
+            if(tableau[i].equalsIgnoreCase(tableau[++pointeur]))
+                i = ++i;
+            
             System.out.println(compteur*10+"%");
         }
-        System.out.println(fournisseur[0]);
                 
     }
     /**
