@@ -15,7 +15,8 @@ public class Exercice_Vendredi {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        String mail[] = {"1@free.fr", "2@free.fr", "3@free.fr", "4@free.fr", "5@free.fr", "6@free.fr", "7@free.fr", "8@free.fr", "9@free.fr", "10@free.fr"}; 
+        
     }
     
 }
