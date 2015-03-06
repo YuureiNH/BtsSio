@@ -5,6 +5,8 @@
  */
 package exercice_vendredi;
 
+import java.awt.Event;
+import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -18,10 +20,15 @@ public class PlusOuMoins {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Date aujourdhui = new Date();
+        long begin = System.currentTimeMillis();
+        long end;
+        
         Random rand = new Random();
-        int nb1 = 0;
-        nb1 = rand.nextInt(1000+ 1);
-        int nbu = 0;
+        int nb1;
+        nb1 = rand.nextInt(10+ 1);
+        
+        int nbu;
         Scanner sc= new Scanner(System.in);
         System.out.print("rentrer un chiffre entre 1 et 1000 pour trouver le chiffre mystère : ");
         nbu = sc.nextInt();
@@ -43,7 +50,8 @@ public class PlusOuMoins {
             System.out.print("recommencer :) : ");
             nbu = sc.nextInt();
         }
-        System.out.println("Bravo vous avez trouver :"+nb1);
+        end=System.currentTimeMillis();
+        System.out.println("Bravo vous avez trouver : "+nb1+" en : "+((end-begin)/1000L)+" Second");
     }
     
 }
